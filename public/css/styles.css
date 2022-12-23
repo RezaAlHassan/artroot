@@ -1,0 +1,196 @@
+body{
+    background-color: white;
+}
+#form-border{
+    border: solid;
+    border-width: 10px;
+    padding: 10px 50px;
+    
+}
+#form-border-2{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+.header{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.form-label{
+    font-weight: bold;
+}
+a{text-decoration: underline;
+    color: inherit;}
+a:hover{ 
+  color: white;
+  text-decoration: none;}
+
+.member-link{
+    font-weight: bold;
+}
+#logo{
+    font-weight: bold;
+    font-family:'Gochi Hand';
+    font-size: 50px;
+    padding-left: 1.8em;
+}
+nav{
+    border-bottom: solid grey;
+    border-width: 1px;
+}
+.nav-item{
+    font-family: 'Roboto Mono';
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+#search{
+    position: absolute;
+    left:85%;
+    transform: translatex(-50%);
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .normal-text{
+    font-family: 'Roboto Mono';
+  }
+
+  .row-alt {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column-alt {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 10px;
+  }
+  
+  .column-alt img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  .container-alt {
+    position: relative;
+  }
+  
+  .topleft {
+    position: absolute;
+    top: 30px;
+    left: 16px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    background-color:rgb(46, 46, 46);
+    border: solid;
+    border-width: 1px;
+    padding: 2%;
+  }
+  
+  .topleft-del {
+    position: absolute;
+    top: 95px;
+    left: 16px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    background-color:rgb(241, 86, 86);
+    border: solid;
+    border-width: 1px;
+    padding: 2%;
+  }
+  
+  .topleft:hover{
+    transition: .5s;
+    background-color:rgb(0, 0, 0);
+  }
+  
+  .topleft-del:hover{
+    transition: .5s;
+    background-color:rgb(255, 0, 0);
+  }
+
+  .form-control:focus {
+    border-color: #333333;
+    border-width: 0.5px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(156, 156, 156, 0.5);
+}
+  
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 800px) {
+      .column-alt {
+        flex: 50%;
+        max-width: 50%;
+      }
+
+    }
+    
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column-alt {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
