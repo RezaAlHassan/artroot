@@ -49,7 +49,7 @@ class AuthController extends Controller
         $check = $this->create($data);
         event(new Registered($check));
          
-        return redirect("profile")->withSuccess('You have signed-in');
+        return redirect("login")->withSuccess('Your account has been created');;
     }
 
     public function create(array $data)
