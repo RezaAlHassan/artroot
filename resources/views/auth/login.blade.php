@@ -15,29 +15,27 @@
 </head>
 <body>
   <p class="px-3" id="logo">ArtRoot</p>
+
   <div id="form-border-2" class="container-sm col-sm-3 center">
     <form id="form-border" role="form" method="POST" action="{{ route('login.custom') }}">
       @csrf
       <div>
         <p class="header" >Log In</p>
+        @if(session('success'))
+        <p class="error-message">{{session('success')}}</p>
+        @endif
       </div>
       <!-- Email input -->
      
       <div class="form-outline mb-4">
         <label class="form-label normal-text" for="email">Email address</label>
         <input type="email" name="email" id="email" class="form-control" />
-        @if ($errors->has('email'))
-        <span class="text-danger">{{ $errors->first('email') }}</span>
-        @endif
       </div>
 
       <!-- Password input -->
       <div class="form-outline mb-4">
         <label class="form-label normal-text" for="form2Example2">Password</label>
         <input type="password" name="password" id="password" class="form-control" />
-        @if ($errors->has('password'))
-        <span class="text-danger">{{ $errors->first('password') }}</span>
-        @endif
       </div>
 
       <!-- Submit button -->

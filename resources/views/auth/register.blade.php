@@ -34,7 +34,8 @@
         <label class="form-label normal-text" for="email">Email address</label>
         <input type="email" name="email" id="email" class="form-control" />
         @if ($errors->has('email'))
-        <span class="text-danger">{{ $errors->first('email') }}</span>
+        <br>
+        <p class="error-message ">{{ $errors->first('email') }}</p>
         @endif
       </div>
 
@@ -43,7 +44,8 @@
         <label class="form-label normal-text" for="form2Example2">Password</label>
         <input type="password" name="password" id="password" class="form-control" />
         @if ($errors->has('password'))
-        <span class="text-danger">{{ $errors->first('password') }}</span>
+        <br>
+        <p class="error-message ">{{ $errors->first('password') }}</p>
         @endif
       </div>
 
