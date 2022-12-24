@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 use Hash;
 use Session;
 use App\Models\User;
@@ -46,6 +47,7 @@ class AuthController extends Controller
            
         $data = $request->all();
         $check = $this->create($data);
+        event(new Registered($check));
          
         return redirect("profile")->withSuccess('You have signed-in');
     }
@@ -57,6 +59,8 @@ class AuthController extends Controller
         'email' => $data['email'],
         'password' => Hash::make($data['password'])
       ]);
+      
+      
     }    
     
     public function profile()
