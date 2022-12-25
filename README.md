@@ -1,6 +1,6 @@
 # Artroot : Laravel 9 
 ### *A platform for artists where they can showcase their art and attract potential buyers, with account support for both artists, customers and enthusiasts.*
-### User Types available:
+### User Types :
 
 - #### Default 
     - They can browse through artworks
