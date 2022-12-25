@@ -53,13 +53,13 @@
       <div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
         <input class="list-group-item-check pe-none" type="radio" name="usertype" id="listGroupCheckableRadios1" value="1" checked>
         <label class="list-group-item rounded-3 py-3 " for="listGroupCheckableRadios1">
-          Default Account
+          Enthusiast 
           <span class="d-block small opacity-50">Browse Artwork </span>
         </label>
       
         <input class="list-group-item-check pe-none" type="radio" name="usertype" id="listGroupCheckableRadios2" value="2">
         <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios2">
-          Artist Account
+          Artist 
           <span class="d-block small opacity-50">Showcase Artwork</span>
         </label>
       
