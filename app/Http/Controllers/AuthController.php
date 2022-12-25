@@ -24,9 +24,20 @@ class AuthController extends Controller
         ]);
    
         $credentials = $request->only('email', 'password');
+        //checks credentials
+         //checks usertype
+          //returns home if default
+           //returns profile if artist
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('profile')
-                        ->withSuccess('Signed in');
+            if(Auth::user()->usertype==1){
+                return redirect()->intended('home')
+                ->withSuccess('Signed in');   
+            }
+            else{
+                return redirect()->intended('profile')
+                ->withSuccess('Signed in');  
+            }
+     
         }
   
         return redirect("login")->withSuccess('Login details are not valid');
@@ -43,6 +54,7 @@ class AuthController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
+            'usertype' => 'required'
         ]);
            
         $data = $request->all();
@@ -57,7 +69,8 @@ class AuthController extends Controller
       return User::create([
         'name' => $data['name'],
         'email' => $data['email'],
-        'password' => Hash::make($data['password'])
+        'password' => Hash::make($data['password']),
+        'usertype' => $data['usertype']
       ]);
       
       
@@ -67,6 +80,14 @@ class AuthController extends Controller
     {
         if(Auth::check()){
             return view('profile');
+        }
+  
+        return redirect("login")->withSuccess('You are not allowed to access');
+    }
+    public function home()
+    {
+        if(Auth::check()){
+            return view('home');
         }
   
         return redirect("login")->withSuccess('You are not allowed to access');

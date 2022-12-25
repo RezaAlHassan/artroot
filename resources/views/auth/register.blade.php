@@ -29,6 +29,7 @@
         <span class="text-danger">{{ $errors->first('name') }}</span>
         @endif
       </div>
+  
      
       <div class="form-outline mb-4">
         <label class="form-label normal-text" for="email">Email address</label>
@@ -47,6 +48,21 @@
         <br>
         <p class="error-message ">{{ $errors->first('password') }}</p>
         @endif
+      </div>
+
+      <div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
+        <input class="list-group-item-check pe-none" type="radio" name="usertype" id="listGroupCheckableRadios1" value="1" checked>
+        <label class="list-group-item rounded-3 py-3 " for="listGroupCheckableRadios1">
+          Default Account
+          <span class="d-block small opacity-50">Browse Artwork </span>
+        </label>
+      
+        <input class="list-group-item-check pe-none" type="radio" name="usertype" id="listGroupCheckableRadios2" value="2">
+        <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios2">
+          Artist Account
+          <span class="d-block small opacity-50">Showcase Artwork</span>
+        </label>
+      
       </div>
 
       <!-- Submit button -->
