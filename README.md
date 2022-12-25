@@ -3,12 +3,14 @@
 ### User Types :
 
 - #### Default 
-    - They can browse through artworks
-    - They can contact artists
-    - They can setup payment accounts and make payments
+    - Browse through artworks
+    - Contact artists
+    - Setup payment accounts and make payments
+    - Can send messages to artists account users
 - #### Artist
     - They can CRUD artwork
     - They can browse through artworks
     - They can setup credit accounts to receive payment
+    - Can receive and send messages to default account users
 
 
