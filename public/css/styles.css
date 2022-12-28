@@ -25,7 +25,7 @@ body{
 a{text-decoration: underline;
     color: inherit;}
 a:hover{ 
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;}
 
 .member-link{
@@ -112,6 +112,23 @@ nav{
 
   .normal-text{
     font-family: 'Roboto Mono';
+  }
+
+  #sub-text{
+    color: #ff7171;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  #sub-text:hover{
+    text-decoration: none;
+  }
+  
+  #login-link{
+    text-decoration: none;
+  }
+
+  #forgot-link{
+    font-size: 14px;
   }
 
   .row-alt {

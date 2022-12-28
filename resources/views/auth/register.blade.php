@@ -68,7 +68,7 @@
       <!-- Submit button -->
       <button type="submit" class="btn btn-dark btn-block mb-4 normal-text">Sign up</button>
       <!-- Register buttons -->
-      <div class="member-link text-center ">"
+      <div class="member-link text-center ">
         <p class="normal-text">Already a member? <a href="login">Login</a></p>
       </div>
     </form>

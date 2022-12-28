@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
 use App\Models\User;
 use App\Http\Controllers\VerificationController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,8 @@ Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login.custom'); 
 Route::get('register', [AuthController::class, 'registration'])->name('register-user');
 Route::post('custom-register', [AuthController::class, 'customRegistration'])->name('register.custom'); 
+Route::get('forgot-password-email', [AuthController::class, 'forgotpassword'])->name('password.email-request'); 
+Route::post('forgot-password-email', [AuthController::class, 'resetlink'])->name('password.email'); 
 //Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 
 Route::group(['middleware' => ['auth']], function() {
@@ -46,7 +50,8 @@ Route::group(['middleware' => ['auth']], function() {
         
     })->middleware(['auth', 'signed'])->name('verification.verify');
     //resend
-    Route::post('/resend-email', [VerifificationController::class, 'resend'])->name('verification.resend');
+    Route::post('/resend-email', [VerificationController::class, 'resend'])->name('verification.resend');
+    
     //verified users can access
     Route::group(['middleware' => ['verified']], function() {
         Route::get('profile', [AuthController::class, 'profile']); 

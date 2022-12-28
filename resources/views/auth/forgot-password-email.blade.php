@@ -10,32 +10,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ArtRoot-register</title>
+  <title>ArtRoot-login</title>
 
 </head>
 <body>
   <p class="px-3" id="logo">ArtRoot</p>
-  <div id="form-border-2" class="container-sm col-sm-2 center">
+
+  <div id="form-border-2" class="container-sm col-sm-3 center">
+    <form id="form-border" role="form" method="POST" action="{{ route('password.email') }}">
+      @csrf
+      <br>
       <div>
-        <p class="header" >Verify Email</p>
+        @if(session('success'))
+        <p class="error-message">{{session('success')}}</p>
+        @endif
       </div>
       <!-- Email input -->
-      <div class="form-outline mb-4 normal-text">
-        <p>Check your email inbox. If the link is not found in your inbox, check your spam/junk folder.</p>
-        @if (session('resent'))
-        <div class="error-message" role="alert">
-            A fresh verification link has been sent to your email address.
-        </div>
-    @endif
-      </div>
      
-      <div class="member-link ">
-        <p id="login-link" class="normal-text"> <a href="login">Login</a></p>
-        <form id="reset-link-form " action="{{ route('verification.resend') }}" method="POST" >
-          @csrf
-        <p id="sub-text"> <a onclick="document.getElementById('reset-link-form').submit()">Resend Link</a></p>
-        </form>
+      <div class="form-outline mb-4">
+        <label class="form-label normal-text" for="email">Email address</label>
+        <input type="email" name="email" id="email" class="form-control" />
       </div>
+    
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-dark btn-block mb-4 normal-text">Send Link</button>
+      <!-- Register buttons -->
+      <div class="member-link text-center ">
+        <a href="/login">Login</a>
+      </div>
+
+      
+    </form>
   </div>
 </body>
 

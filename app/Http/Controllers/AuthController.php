@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Password;
 use Hash;
 use Session;
 use App\Models\User;
@@ -14,6 +15,11 @@ class AuthController extends Controller
     public function index()
     {
         return view('auth.login');
+    }  
+
+    public function forgotpassword()
+    {
+        return view('auth.forgot-password-email');
     }  
       
     public function customLogin(Request $request)
@@ -75,6 +81,20 @@ class AuthController extends Controller
       
       
     }    
+
+    public function resetlink(Request $request)
+    {
+        $request->validate(['email' => 'required|email']);
+ 
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+     
+        return $status === Password::RESET_LINK_SENT
+                    ? back()->with(['status' => __($status)])
+                    : back()->withErrors(['email' => __($status)]);
+      
+    }  
     
     public function profile()
     {

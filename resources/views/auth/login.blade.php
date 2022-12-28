@@ -36,13 +36,14 @@
       <div class="form-outline mb-4">
         <label class="form-label normal-text" for="form2Example2">Password</label>
         <input type="password" name="password" id="password" class="form-control" />
+        <p id="forgot-link"><a href="/forgot-password-email">Forgot Password?</a> </p>
       </div>
     
       <!-- Submit button -->
       <button type="submit" class="btn btn-dark btn-block mb-4 normal-text">Sign in</button>
       <!-- Register buttons -->
       <div class="member-link text-center ">
-        <p class="normal-text">Not a member? <a href="/register">Sign up</a></p>
+        <p >Not a member? <a href="/register">Sign up</a></p>
       </div>
 
       
