@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ArtRoot-register</title>
+  <title>ArtRoot : Verify Email</title>
 
 </head>
 <body>
@@ -23,7 +23,7 @@
       <div class="form-outline mb-4 normal-text">
         <p>Check your email inbox. If the link is not found in your inbox, check your spam/junk folder.</p>
         @if (session('resent'))
-        <div class="error-message" role="alert">
+        <div class="info-message" role="alert">
             A fresh verification link has been sent to your email address.
         </div>
     @endif

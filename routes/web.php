@@ -29,7 +29,11 @@ Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login
 Route::get('register', [AuthController::class, 'registration'])->name('register-user');
 Route::post('custom-register', [AuthController::class, 'customRegistration'])->name('register.custom'); 
 Route::get('forgot-password-email', [AuthController::class, 'forgotpassword'])->name('password.email-request'); 
-Route::post('forgot-password-email', [AuthController::class, 'resetlink'])->name('password.email'); 
+Route::post('forgot-password-email', [AuthController::class, 'emailrequest'])->name('password.link'); 
+Route::get('/reset-password/{token}', function ($token) {
+    return view('auth.reset-password', ['token' => $token]);
+})->name('password.reset');
+Route::post('/reset-password', [AuthController::class, 'updatepassword'])->name('password.update'); 
 //Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 
 Route::group(['middleware' => ['auth']], function() {

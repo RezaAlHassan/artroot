@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ArtRoot-register</title>
+  <title>ArtRoot: Register</title>
 
 </head>
 <body>
@@ -26,7 +26,7 @@
         <label class="form-label normal-text" for="name">Name</label>
         <input type="name" name="name" id="name" class="form-control" />
         @if ($errors->has('name'))
-        <span class="text-danger">{{ $errors->first('name') }}</span>
+        <span class="error-messager">{{ $errors->first('name') }}</span>
         @endif
       </div>
   

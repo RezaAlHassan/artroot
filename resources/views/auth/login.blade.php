@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ArtRoot-login</title>
+  <title>ArtRoot : Login</title>
 
 </head>
 <body>
@@ -22,8 +22,11 @@
       <div>
         <p class="header" >Log In</p>
         @if(session('success'))
-        <p class="error-message">{{session('success')}}</p>
+        <p class="info-message">{{session('success')}}</p>
         @endif
+        @error('invalid_cred')
+        <p class="error-message">{{$message}}</p> 
+        @enderror
       </div>
       <!-- Email input -->
      
