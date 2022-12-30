@@ -92,8 +92,9 @@ class AuthController extends Controller
        // $email = Input::get('email');
        
         $status = Password::sendResetLink(
-
-            $request->only('email')
+        $request->only('email')
+       //$user = User::first(); 
+       //$user->notify(new Allow());
         );
      
         return $status === Password::RESET_LINK_SENT
