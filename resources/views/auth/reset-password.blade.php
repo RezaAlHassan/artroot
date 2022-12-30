@@ -27,14 +27,19 @@
         @error('email')
         <p class="error-message">{{$message}}</p> 
         @enderror
+        @if ($errors->any())
+        @foreach ($errors->all() as $error)
+        <p class="error-message">{{$error}}</p>
+        @endforeach
+        @endif
       </div>
       <!-- Email input -->
      
-      <div class="form-outline mb-4">
-        <label class="form-label normal-text">Email address</label>
-        <input type="email" name="email" id="email" class="form-control" />
-      </div>
 
+       
+       <input hidden name="email" value="{{request()->get('email')}}" id="email"  class="form-control" />
+
+      <input hidden name="token" i class="form-control" value="{{$token}}" />
       <!-- Password input -->
       <div class="form-outline mb-4">
         <label class="form-label normal-text" >Password</label>
