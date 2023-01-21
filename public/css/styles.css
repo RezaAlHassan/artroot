@@ -1,3 +1,5 @@
+
+
 body{
     background-color: white;
     font-family: 'Roboto Mono';
@@ -15,19 +17,47 @@ body{
     transform:translate(-50%, -50%);
 }
 .header{
-    font-size: 50px;
+    font-size: 100px;
     font-weight: bold;
 }
+
+.subtext{
+  font-size: 20px;
+}
+
+.btn-def{
+  font-family: 'Roboto Mono';
+  font-size: 15px;
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+}
+
+.add-art-btn{
+  font-family: 'Roboto Mono';
+  font-size: 20px;
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+}
+
+.add-art-btn:hover{
+  font-family: 'Roboto Mono';
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.836);
+  color: #fff;
+  padding: 10px;
+}
+
+
+
 
 .form-label{
     font-weight: bold;
 }
 a{text-decoration: underline;
     color: inherit;}
-a:hover{ 
-  color: rgb(0, 0, 0);
-  text-decoration: none;}
-
+    
 .member-link{
     font-weight: bold;
 }
@@ -37,10 +67,7 @@ a:hover{
     font-size: 50px;
     padding-left: 1.8em;
 }
-nav{
-    border-bottom: solid grey;
-    border-width: 1px;
-}
+
 .nav-item{
     font-family: 'Roboto Mono';
     font-size: 20px;
@@ -131,29 +158,145 @@ nav{
     font-size: 14px;
   }
 
-  .row-alt {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 10px;
-  }
-  
   /* Create four equal columns that sits next to each other */
-  .column-alt {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 10px;
-  }
   
-  .column-alt img {
+  /*.column-alt img {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
+  }*/
+ 
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-alt-2 {
+  padding: 40px 5%;
+}
+
+.heading-text {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.heading-text span {
+  font-weight: 100;
+}
+
+/* Responsive image gallery rules begin*/
+
+.image-gallery {
+  /* Mobile first */
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.image-gallery .column-alt-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.column-alt-2 {
+  column-width: 200px;
+  max-width: 600px;
+}
+
+.image-item img {
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 768px) {
+  .image-gallery {
+    flex-direction: row;
+  }
+}
+
+/* overlay styles */
+
+.image-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(57, 57, 57, 0.502);
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: all 0.2s 0.1s ease-in;
+  color: #fff;
+  /* center overlay content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hover */
+.image-item:hover .overlay {
+  transform: scale(1);
+}
+
+  .image-title{
+    font-weight: bolder;
+    font-size: 30px;
+    font-family:'Roboto Mono' ;
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 5px 10px;
+    
   }
 
-  .container-alt {
-    position: relative;
+  .image-title-sub{
+    font-weight: bolder;
+    font-size: 20px;
+    font-family:'Roboto Mono' ;
+    background-color: rgba(31, 31, 31, 0.7);
+    padding: 3px 7px;
+    
   }
   
+  /*.container-alt-2 {
+    padding: 40px 5%;
+  }
+
+  .photo-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .photo-gallery .column-alt-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .photo img {
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo{
+    position: relative;
+    cursor: pointer;
+  }
+  */
+
   .topleft {
     position: absolute;
     top: 30px;
@@ -269,21 +412,3 @@ nav{
     opacity: .5;
   }
   
-
-  
-    /* Responsive layout - makes a two column-layout instead of four columns */
-    @media screen and (max-width: 800px) {
-      .column-alt {
-        flex: 50%;
-        max-width: 50%;
-      }
-
-    }
-    
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-      .column-alt {
-        flex: 100%;
-        max-width: 100%;
-      }
-    }
