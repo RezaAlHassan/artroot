@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 use App\Models\User;
 use App\Http\Controllers\VerificationController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -59,6 +60,7 @@ Route::group(['middleware' => ['auth']], function() {
     //verified users can access
     Route::group(['middleware' => ['verified']], function() {
         Route::get('profile', [AuthController::class, 'profile']); 
+        Route::get('add-art', [ProfileController::class, 'addArt']); 
         Route::get('home', [AuthController::class, 'home']); 
 });
 

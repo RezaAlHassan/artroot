@@ -141,7 +141,7 @@ class AuthController extends Controller
         return redirect("login")->withSuccess('You are not allowed to access');
     }
     public function home()
-    {
+    { 
         if(Auth::check()){
             return view('home');
         }

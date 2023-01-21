@@ -13,6 +13,12 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+    
+    public function arts()
+    {
+        return $this->hasMany(Art::class);
+    }
+    
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -46,4 +52,5 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }

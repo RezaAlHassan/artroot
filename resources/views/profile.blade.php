@@ -55,16 +55,19 @@
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
             <div class="d-flex flex-column">
-              <div class="p-2"><h1 class="header">My Gallery</h1><div>
+              <div class="p-2"><h1 class="header">My Gallery</h1></div>
               <div class="p-2"><p class="normal-text text-muted subtext">Add, edit or delete your artwork to showcase. This is your gallery.</p></div>
-              <div class="p-2"> <p><a href="#" class="add-art-btn normal-text" style="text-decoration: none; ">Add Artwork</a></p></div>
-            </div>
-            
-            
+              <div class="p-2"> 
+                <button type="button"  class="btn add-art-btn normal-text" style="text-decoration: none;" >Add Artwork</button>
 
+              </div>
+            </div>
           </div>
         </div>
       </section>  
+      
+
+
       <div class="container-alt-2">
         <div class="image-gallery">
           <div class="column-alt-2">
@@ -95,7 +98,7 @@
               </div>
             </div>
             <div class="image-item">
-              <img src="images/anato-finnstark-anato-finnstark-1-final-cover-2.jpg" alt="" />
+              <img src="images/cr7.jpg" alt="" />
               <div class="overlay"><span>Image title</span></div>
             </div>
           </div>
