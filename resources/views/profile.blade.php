@@ -58,7 +58,7 @@
               <div class="p-2"><h1 class="header">My Gallery</h1></div>
               <div class="p-2"><p class="normal-text text-muted subtext">Add, edit or delete your artwork to showcase. This is your gallery.</p></div>
               <div class="p-2"> 
-                <button type="button"  class="btn add-art-btn normal-text" style="text-decoration: none;" >Add Artwork</button>
+                <button href="/add-art" type="button"  class="btn add-art-btn normal-text" style="text-decoration: none;" >Add Artwork</button>
 
               </div>
             </div>
@@ -71,12 +71,14 @@
       <div class="container-alt-2">
         <div class="image-gallery">
           <div class="column-alt-2">
+            @foreach($arts as $art)
+            @if(($art->id)%2==0) {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
             <div class="image-item">
-              <img src="images/rienque-leverite-geralt.jpg" alt="" />
+              <img src="{{ asset('storage/arts/'.$art->path) }}" alt="" />
               <div class="overlay">
                 <div class="d-flex flex-column">
-                  <div class="p-2"><span class="image-title">Geralt Sketch </span></div>
-                  <div class="p-2"><span class="image-title-sub">Art : Canvas</span></div>
+                  <div class="p-2"><span class="image-title">{{$art->art_name}} </span></div>
+                  <div class="p-2"><span class="image-title-sub">{{$art->art_category}}</span></div>
                   <div class="d-flex flex-row">
                     <div class="p-2"><a class="btn btn-dark my-2 normal-text">Edit</a></div>
                     <div class="p-2"><a class="btn btn-danger my-2 normal-text">Delete</a></div>
@@ -84,23 +86,11 @@
                 </div>        
               </div>
             </div>
-            <div class="image-item">
-              <img src="images/red_dead_redemption_2_arthur_morgan_and_the_gang_by_love_myart_deuaxay.jpg" alt="" />
-              <div class="overlay">
-                <div class="d-flex flex-column">
-                  <div class="p-2"><span class="image-title">RDR Cover </span></div>
-                  <div class="p-2"><span class="image-title-sub">Digital : Illustration</span></div>
-                  <div class="d-flex flex-row">
-                    <div class="p-2"><a class="btn btn-dark my-2 normal-text">Edit</a></div>
-                    <div class="p-2"><a class="btn btn-danger my-2 normal-text">Delete</a></div>
-                  </div>
-                </div>  
-              </div>
-            </div>
-            <div class="image-item">
-              <img src="images/cr7.jpg" alt="" />
-              <div class="overlay"><span>Image title</span></div>
-            </div>
+            @endif
+            @endforeach
+
+
+
           </div>
           <div class="column-alt-2">
             <div class="image-item">

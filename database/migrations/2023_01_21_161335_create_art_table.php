@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('art', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
             $table->string('art_name');
             $table->string('art_category');
+            $table->string('path');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained();
         });
     }
 

@@ -131,15 +131,6 @@ class AuthController extends Controller
     }  
     
 
-    
-    public function profile()
-    {
-        if(Auth::check()){
-            return view('profile');
-        }
-  
-        return redirect("login")->withSuccess('You are not allowed to access');
-    }
     public function home()
     { 
         if(Auth::check()){

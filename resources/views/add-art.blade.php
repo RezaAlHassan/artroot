@@ -15,7 +15,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg ">
+  @if(session('status'))
+  <p class="success-message center text-center">{{session('status')}}</p>
+  @endif
+  <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
           <a class="navbar-brand " id="logo" href="#">ArtRoot</a>  
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +53,6 @@
           </div>
         </div>
       </nav>
-
       <section class="py-5 text-center container">
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
@@ -63,36 +65,50 @@
             </div>
           </div>
         </div>
+        <div class="container col-sm-3 center">
+          <form  role="form" method="POST" action="{{ route('art.add') }}" enctype="multipart/form-data">
+            @csrf
+            <!-- Email input -->
+           
+            <div class="form-outline mb-4">
+              <label class="form-label normal-text" for="art_name">Art Name</label>
+              <input type="name" name="art_name" id="art_name" class="form-control" />
+              @if ($errors->has('art_name'))
+              <span class="error-messager">{{ $errors->first('art_name') }}</span>
+              @endif
+            </div>
+      
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label normal-text">Category</label>
+              <select class="form-select form-control normal-text" aria-label="Default select example" name="art_category">
+                  <option class="normal-text" selected>All Categories</option>
+                  <option class="normal-text" value="digital">Digital</option>
+                  <option class="normal-text" value="hand_drawn">Hand Drawn</option>
+                  <option class="normal-text" value="product">Product</option>
+                  <option class="normal-text" value="hybrid">Hybrid</option>
+                </select>
+              </div>
+            
+            <div class="form-outline mb-4">
+            <label for="formFileLg" class="form-label normal-text">Upload Image</label>
+            <input name="art" class="form-control normal-text" id="formFileLg" type="file">
+            @if ($errors->has('art'))
+            <span class="error-message">{{ $errors->first('art') }}</span>
+            @endif
+          </div>
+          
+            <!-- Submit button -->
+            <div class="d-flex justify-content-center ">
+            <button type="submit" class="btn btn-dark mb-4 normal-text btn-lg my-3">Save</button>
+            </div>
+            <!-- Register buttons -->
+          </form>
+        </div>
       </section>  
 
                      
-      <div class="container col-sm-3 center">
-        <form  role="form" method="POST" action="">
-          @csrf
-          <!-- Email input -->
-         
-          <div class="form-outline mb-4">
-            <label class="form-label normal-text" for="name">Art Name</label>
-            <input type="name" name="name" id="name" class="form-control" />
-          </div>
-    
-          <!-- Password input -->
-          <div class="form-outline mb-4">
-            <label class="form-label normal-text">Category</label>
-            <select class="form-select form-control normal-text" aria-label="Default select example">
-                <option class="normal-text" selected>All Categories</option>
-                <option class="normal-text" value="1">Digital</option>
-                <option class="normal-text" value="2">Hand Drawn</option>
-                <option class="normal-text" value="3">Product</option>
-                <option class="normal-text" value="3">Hybrid</option>
-              </select>
-          </div>
-        
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-dark mb-4 normal-text ">Save</button>
-          <!-- Register buttons -->
-        </form>
-      </div>
+
       
 
 </body>

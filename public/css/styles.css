@@ -17,7 +17,7 @@ body{
     transform:translate(-50%, -50%);
 }
 .header{
-    font-size: 100px;
+    font-size: 85px;
     font-weight: bold;
 }
 
@@ -356,6 +356,13 @@ body {
     color: white;
     font-family: "Roboto Mono";
     background-color: rgb(231, 60, 60);
+    padding: 10px;  
+  }
+
+  .success-message{
+    color: white;
+    font-family: "Roboto Mono";
+    background-color: rgb(1, 141, 94);
     padding: 10px;  
   }
 

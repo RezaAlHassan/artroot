@@ -59,8 +59,11 @@ Route::group(['middleware' => ['auth']], function() {
     
     //verified users can access
     Route::group(['middleware' => ['verified']], function() {
-        Route::get('profile', [AuthController::class, 'profile']); 
+       
+        Route::get('profile', [ProfileController::class, 'profile']); 
         Route::get('add-art', [ProfileController::class, 'addArt']); 
+        Route::post('add-art', [ ProfileController::class, 'uploadArt' ])->name('art.add'); ;
+
         Route::get('home', [AuthController::class, 'home']); 
 });
 
