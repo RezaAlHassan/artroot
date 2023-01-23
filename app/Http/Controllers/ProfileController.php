@@ -38,13 +38,18 @@ class ProfileController extends Controller
  
         $art_name = $request->input('art_name');
         $art_category = $request->input('art_category');
-        $path = $request->file('art')->store('public/arts');
+        
+        $file = $request->file('art') ;
+        $fileName = str_replace(' ', '', $file->getClientOriginalName());
+        $destinationPath = public_path().'/arts' ;
+        $file->move($destinationPath,$fileName);
+        
         $user_id = auth()->user()->id; 
  
         $save = new Art;
         $save->art_name = $art_name;
         $save->art_category = $art_category;
-        $save->path = $path;
+        $save->path = $fileName;
         $save->user_id = $user_id;
  
         $save->save();
@@ -52,4 +57,22 @@ class ProfileController extends Controller
       return redirect('add-art')->with('status', 'Your Artwork Has been uploaded')->with('art',$art_name);
  
     }
+
+    /*public function displayImage($filename)
+    {
+        $path = storage_public($filename);
+
+        if (!File::exists($path)) {
+        abort(404);
+        } 
+
+        $file = File::get($path);
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+
+        return $response;
+}*/
+
 }

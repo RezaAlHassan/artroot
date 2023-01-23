@@ -70,11 +70,13 @@
 
       <div class="container-alt-2">
         <div class="image-gallery">
+          
           <div class="column-alt-2">
             @foreach($arts as $art)
-            @if(($art->id)%2==0) {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
+            @if($art->id==1 || $art->id==1 ) {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
             <div class="image-item">
-              <img src="{{ asset('storage/arts/'.$art->path) }}" alt="" />
+              {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
+              <img src="{{ asset('arts/'.$art->path) }}" alt="" />
               <div class="overlay">
                 <div class="d-flex flex-column">
                   <div class="p-2"><span class="image-title">{{$art->art_name}} </span></div>
@@ -88,89 +90,53 @@
             </div>
             @endif
             @endforeach
-
-
-
           </div>
+              
           <div class="column-alt-2">
+            @foreach($arts as $art)
+            @if(($art->id)%2!==0) {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
             <div class="image-item">
-              <img src="images/anato-finnstark-anato-finnstark-1-final-cover-2.jpg" alt="" />
-              <div class="overlay"><span>Image title</span></div>
+              {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
+              <img src="{{ asset('arts/'.$art->path) }}" alt="" />
+              <div class="overlay">
+                <div class="d-flex flex-column">
+                  <div class="p-2"><span class="image-title">{{$art->art_name}} </span></div>
+                  <div class="p-2"><span class="image-title-sub">{{$art->art_category}}</span></div>
+                  <div class="d-flex flex-row">
+                    <div class="p-2"><a class="btn btn-dark my-2 normal-text">Edit</a></div>
+                    <div class="p-2"><a class="btn btn-danger my-2 normal-text">Delete</a></div>
+                  </div>
+                </div>        
+              </div>
             </div>
-            <div class="image-item">
-              <img src="images/assassin_s_creed_iii_by_noble6design_d7i42zm.png" alt="" />
-              <div class="overlay"><span>Image title</span></div>
-            </div>
-            <div class="image-item">
-              <img src="images/esports3.jpg" alt="" />
-              <div class="overlay"><span>Image title</span></div>
-            </div>
-            <div class="image-item">
-              <img src="images/anato-finnstark-anato-finnstark-1-final-cover-2.jpg" alt="" />
-              <div class="overlay"><span>Image title</span></div>
-            </div>
+            @endif
+            @endforeach
           </div>
+
           <div class="column-alt-2">
+            @foreach($arts as $art)
+            @if(($art->id)%2===0) {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
             <div class="image-item">
-              <img src="images/ac1.png" alt="" />
-              <div class="overlay"><span>Image title</span></div>
+              {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
+              <img src="{{ asset('arts/'.$art->path) }}" alt="" />
+              <div class="overlay">
+                <div class="d-flex flex-column">
+                  <div class="p-2"><span class="image-title">{{$art->art_name}} </span></div>
+                  <div class="p-2"><span class="image-title-sub">{{$art->art_category}}</span></div>
+                  <div class="d-flex flex-row">
+                    <div class="p-2"><a class="btn btn-dark my-2 normal-text">Edit</a></div>
+                    <div class="p-2"><a class="btn btn-danger my-2 normal-text">Delete</a></div>
+                  </div>
+                </div>        
+              </div>
             </div>
-            <div class="image-item">
-              <img src="images/batman_arkham_knight_by_joepalombarini_d8t5jtn.jpg" alt="" />
-              <div class="overlay"><span>Image title</span></div>
-            </div>
-            <div class="image-item">
-              <img src="images/dahlia-b-sage.jpg" alt="" />
-              <div class="overlay"><span>Image title</span></div>
-            </div>
-            <div class="image-item">
-              <img src="images/anato-finnstark-anato-finnstark-1-final-cover-2.jpg" alt="" />
-              <div class="overlay"><span>Image title</span></div>
-            </div>
+            @endif
+            @endforeach
           </div>
+
         </div>
       </div>
       
-      
-      
-      {{--- <div class="container-alt-2">
-        <div class="photo-gallery">
-          <div class="column-alt-2">
-             <div class="photo">
-                <img src="images/anato-finnstark-anato-finnstark-1-final-cover-1v.jpg" alt="">
-             </div>
-             <div class="photo">
-                <img src="images/red_dead_redemption_2___wallpaper_by_3demerzel_dcafyfy.png" alt="">
-             </div>
-             <div class="photo">
-                <img src="images/juan-mendez-signs2.jpg" alt="">
-             </div>
-           </div>
-         <div class="column-alt-2">
-             <div class="photo">
-                <img src="images/kane-2.jpg" alt="">
-             </div>
-             <div class="photo">
-                <img src="images/batman_arkham_knight_by_joepalombarini_d8t5jtn.jpg" alt="">
-             </div>
-             <div class="photo">
-                <img src="images/mark-penman-witcher-comic-04.jpg" alt="">
-             </div>
-           </div>
-         <div class="column-alt-2">
-             <div class="photo">
-                <img src="https://source.unsplash.com/W3FC_bCPw8E" alt="">
-             </div>
-             <div class="photo">
-                <img src="images/red_dead_redemption_2_arthur_morgan_and_the_gang_by_love_myart_deuaxay.jpg" alt="">
-             </div>
-             <div class="photo">
-                <img src="images/rienque-leverite-geralt.jpg" alt="">
-             </div>
-           </div>
-        </div>
-      </div> ---}}
-
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

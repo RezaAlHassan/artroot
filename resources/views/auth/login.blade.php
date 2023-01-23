@@ -22,7 +22,7 @@
       <div>
         <p class="header" >Log In</p>
         @if(session('success'))
-        <p class="info-message">{{session('success')}}</p>
+        <p id="successMessage" class="success-message">{{session('success')}}</p>
         @endif
         @error('invalid_cred')
         <p class="error-message">{{$message}}</p> 
@@ -55,6 +55,11 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+</script>
+<script>
+setTimeout(function() {
+    $('.success-message').remove();
+}, 260); 
+</script>
 </html>
