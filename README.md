@@ -13,7 +13,7 @@
     - Can receive and send messages to default account users
 
 ## UI/UX 
-A modern, simple and attractive user friendly ui has been used along with good implementation of ux with backend. Every part of the frontend is custom made, created from nothing.
+A modern, simple and attractive user friendly ui has been used along with good implementation of ux with backend. Every part of the frontend is custom made, created from scratch. CSS,JS,Bootstrap
 - A user only has to enter his email once during resetting his email. After email link is clicked he doesnt need to enter his email again and the user can change his password.
 - All possible errors are shown, attratively, that can happen during form validation both during registartion and login
 - A user is properly informed of his actions using information messages that stand out and clever redirection techniques
