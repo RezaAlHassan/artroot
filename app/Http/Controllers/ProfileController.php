@@ -11,9 +11,10 @@ use App\Models\Art;
 class ProfileController extends Controller
 {
     public function profile()
-    {
+    {   
+        $user_id = auth()->user()->id; 
         if(Auth::check()){
-            $arts=Art::get();
+            $arts=Art::where('user_id', $user_id)->get();
             return view('profile')->with('arts', $arts);
         }
   

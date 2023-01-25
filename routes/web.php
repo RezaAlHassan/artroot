@@ -56,14 +56,16 @@ Route::group(['middleware' => ['auth']], function() {
     })->middleware(['auth', 'signed'])->name('verification.verify');
     //resend
     Route::post('/resend-email', [VerificationController::class, 'resend'])->name('verification.resend');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    
     
     //verified users can access
     Route::group(['middleware' => ['verified']], function() {
        
         Route::get('profile', [ProfileController::class, 'profile']); 
-        Route::get('add-art', [ProfileController::class, 'addArt']); 
+        Route::get('add-art', [ProfileController::class, 'addArt'])->name('art.add-form'); 
         Route::post('add-art', [ ProfileController::class, 'uploadArt' ])->name('art.add'); 
-        Route::get('{filename}', [ ProfileController::class, 'displayArt' ])->name('art.display'); 
 
         Route::get('home', [AuthController::class, 'home']); 
 });

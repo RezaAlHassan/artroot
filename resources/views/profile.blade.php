@@ -37,7 +37,7 @@
                   <li><a class="dropdown-item" href="#">My Gallery</a></li>
                   <li><a class="dropdown-item" href="#">Account</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                  <li><a href="{{ route('logout') }}" class="dropdown-item" >Sign Out</a></li>
                 </ul>
               </li>
             </ul>
@@ -52,15 +52,15 @@
       </nav>
 
       <section class="py-5 text-center container">
+       
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
             <div class="d-flex flex-column">
               <div class="p-2"><h1 class="header">My Gallery</h1></div>
               <div class="p-2"><p class="normal-text text-muted subtext">Add, edit or delete your artwork to showcase. This is your gallery.</p></div>
-              <div class="p-2"> 
-                <button href="/add-art" type="button"  class="btn add-art-btn normal-text" style="text-decoration: none;" >Add Artwork</button>
-
-              </div>
+            </div>
+            <div class="p-2"> 
+              <a class="btn add-art-btn btn-dark normal-text" href="{{ route('art.add-form') }}" role="button">Add Artwork</a>
             </div>
           </div>
         </div>
