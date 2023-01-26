@@ -13,17 +13,18 @@ class ProfileController extends Controller
     public function profile()
     {   
         $user_id = auth()->user()->id; 
-        if(Auth::check()){
+        $usertype = auth()->user()->usertype; 
+        if(Auth::check() && $usertype == 2){
             $arts=Art::where('user_id', $user_id)->get();
             return view('profile')->with('arts', $arts);
         }
   
-        return redirect("login")->withSuccess('You are not allowed to access');
+        return redirect("home");
     }
    
     public function addArt()
     {
-        if(Auth::check()){
+        if(Auth::check() && $usertype == 2){
             return view('add-art');
         }
   

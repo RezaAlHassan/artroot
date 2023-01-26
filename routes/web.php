@@ -46,12 +46,8 @@ Route::group(['middleware' => ['auth']], function() {
     //email link
     Route::get('/verify-email/{id}/{hash}', function (EmailVerificationRequest $request) {
         $request->fulfill();
-        if(Auth::user()->usertype==1){
-            return redirect('/home');   
-        }
-        else{
-            return redirect('/profile');
-        }
+        return redirect('/login');   
+        
         
     })->middleware(['auth', 'signed'])->name('verification.verify');
     //resend

@@ -73,7 +73,7 @@
           
           <div class="column-alt-2">
             @foreach($arts as $art)
-            @if($art->id==1 || $art->id==1 ) {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
+            @if(($art->id)%2!==0)      {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
             <div class="image-item">
               {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
               <img src="{{ asset('arts/'.$art->path) }}" alt="" />
@@ -92,27 +92,6 @@
             @endforeach
           </div>
               
-          <div class="column-alt-2">
-            @foreach($arts as $art)
-            @if(($art->id)%2!==0) {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
-            <div class="image-item">
-              {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
-              <img src="{{ asset('arts/'.$art->path) }}" alt="" />
-              <div class="overlay">
-                <div class="d-flex flex-column">
-                  <div class="p-2"><span class="image-title">{{$art->art_name}} </span></div>
-                  <div class="p-2"><span class="image-title-sub">{{$art->art_category}}</span></div>
-                  <div class="d-flex flex-row">
-                    <div class="p-2"><a class="btn btn-dark my-2 normal-text">Edit</a></div>
-                    <div class="p-2"><a class="btn btn-danger my-2 normal-text">Delete</a></div>
-                  </div>
-                </div>        
-              </div>
-            </div>
-            @endif
-            @endforeach
-          </div>
-
           <div class="column-alt-2">
             @foreach($arts as $art)
             @if(($art->id)%2===0) {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
