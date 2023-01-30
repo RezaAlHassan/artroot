@@ -10,12 +10,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ArtRoot : rofile</title>
+  <title>ArtRoot : Profile</title>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg ">
+  @if(session('status'))
+  <p class="info-message center text-center">{{session('status')}}</p>
+  @endif
+    <nav class="navbar sticky-top navbar-expand-lg ">
         <div class="container-fluid">
           <a class="navbar-brand " id="logo" href="#">ArtRoot</a>  
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +27,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  navbar-center mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link mx-2" aria-current="page" href="#">Home</a>
+                <a class="nav-link mx-2" aria-current="page" href="/home">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link mx-4" href="#">Browse</a>
@@ -34,7 +37,7 @@
                   Profile
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">My Gallery</a></li>
+                  @if(auth()->user()->usertype==2)<li><a class="dropdown-item" href="/profile">My Gallery</a></li> @endif
                   <li><a class="dropdown-item" href="#">Account</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a href="{{ route('logout') }}" class="dropdown-item" >Sign Out</a></li>
@@ -73,7 +76,7 @@
           
           <div class="column-alt-2">
             @foreach($arts as $art)
-            @if(($art->id)%2!==0)      {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
+            @if(($art->id)%4==1)      {{--to determine which images will go to which column--}}
             <div class="image-item">
               {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
               <img src="{{ asset('arts/'.$art->path) }}" alt="" />
@@ -83,7 +86,7 @@
                   <div class="p-2"><span class="image-title-sub">{{$art->art_category}}</span></div>
                   <div class="d-flex flex-row">
                     <div class="p-2"><a class="btn btn-dark my-2 normal-text">Edit</a></div>
-                    <div class="p-2"><a class="btn btn-danger my-2 normal-text">Delete</a></div>
+                    <div class="p-2"><a href='{{ route('art.delete', $art->id) }}' class="btn btn-danger my-2 normal-text">Delete</a></div>
                   </div>
                 </div>        
               </div>
@@ -94,7 +97,7 @@
               
           <div class="column-alt-2">
             @foreach($arts as $art)
-            @if(($art->id)%2===0) {{--to determine which images will go to which row ids with multiples of two will go to first column--}}
+            @if(($art->id)%4==2) {{--to determine which images will go to which column--}}
             <div class="image-item">
               {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
               <img src="{{ asset('arts/'.$art->path) }}" alt="" />
@@ -104,7 +107,49 @@
                   <div class="p-2"><span class="image-title-sub">{{$art->art_category}}</span></div>
                   <div class="d-flex flex-row">
                     <div class="p-2"><a class="btn btn-dark my-2 normal-text">Edit</a></div>
-                    <div class="p-2"><a class="btn btn-danger my-2 normal-text">Delete</a></div>
+                    <div class="p-2"><a href='{{ route('art.delete', $art->id) }}' class="btn btn-danger my-2 normal-text">Delete</a></div>
+                  </div>
+                </div>        
+              </div>
+            </div>
+            @endif
+            @endforeach
+          </div>
+
+          <div class="column-alt-2">
+            @foreach($arts as $art)
+            @if(($art->id)%4==3) {{--to determine which images will go to which column --}}
+            <div class="image-item">
+              {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
+              <img src="{{ asset('arts/'.$art->path) }}" alt="" />
+              <div class="overlay">
+                <div class="d-flex flex-column">
+                  <div class="p-2"><span class="image-title">{{$art->art_name}} </span></div>
+                  <div class="p-2"><span class="image-title-sub">{{$art->art_category}}</span></div>
+                  <div class="d-flex flex-row">
+                    <div class="p-2"><a class="btn btn-dark my-2 normal-text">Edit</a></div>
+                    <div class="p-2"><a href='{{ route('art.delete', $art->id) }}' class="btn btn-danger my-2 normal-text">Delete</a></div>
+                  </div>
+                </div>        
+              </div>
+            </div>
+            @endif
+            @endforeach
+          </div>
+
+          <div class="column-alt-2">
+            @foreach($arts as $art)
+            @if(($art->id)%4==0) {{--to determine which images will go to which column--}}
+            <div class="image-item">
+              {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
+              <img src="{{ asset('arts/'.$art->path) }}" alt="" />
+              <div class="overlay">
+                <div class="d-flex flex-column">
+                  <div class="p-2"><span class="image-title">{{$art->art_name}} </span></div>
+                  <div class="p-2"><span class="image-title-sub">{{$art->art_category}}</span></div>
+                  <div class="d-flex flex-row">
+                    <div class="p-2"><a class="btn btn-dark my-2 normal-text">Edit</a></div>
+                    <div class="p-2"><a href='{{ route('art.delete', $art->id) }}' class="btn btn-danger my-2 normal-text">Delete</a></div>
                   </div>
                 </div>        
               </div>
@@ -114,6 +159,12 @@
           </div>
 
         </div>
+        @if(count($arts)==0)
+        <div class="transparent-message center text-center">
+          <p>No Artworks Found</p>
+          <img src="{{ asset('images/empty.png') }}" height="50">
+        </div>
+      @endif
       </div>
       
 

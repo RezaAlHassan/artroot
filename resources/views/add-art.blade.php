@@ -37,7 +37,7 @@
                   Profile
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">My Gallery</a></li>
+                  <li><a class="dropdown-item" href="/profile">My Gallery</a></li>
                   <li><a class="dropdown-item" href="#">Account</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Sign Out</a></li>
@@ -105,6 +105,7 @@
             <!-- Register buttons -->
           </form>
         </div>
+        <span><a href="/profile" class="gallery-link px-4 normal-text">Back to your gallery</a></span>
       </section>  
 
                      

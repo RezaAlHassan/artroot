@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Password;
@@ -93,8 +94,6 @@ class AuthController extends Controller
        
         $status = Password::sendResetLink(
         $request->only('email')
-       //$user = User::first(); 
-       //$user->notify(new Allow());
         );
      
         return $status === Password::RESET_LINK_SENT
@@ -139,13 +138,6 @@ class AuthController extends Controller
   
         return redirect("login")->withSuccess('You are not allowed to access');
     }
-    
-    public function signOut() {
-        Session::flush();
-        Auth::logout();
-  
-        return Redirect('login');
-    }
 
     public function logout(Request $request)
     {
@@ -157,4 +149,5 @@ class AuthController extends Controller
  
         return redirect('/login');
     }
-        }
+
+}

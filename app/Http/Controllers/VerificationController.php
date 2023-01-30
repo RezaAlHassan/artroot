@@ -55,4 +55,11 @@ class VerificationController extends Controller
                             'pageTitle' => __('Account Verification')
                         ]);
     }
+
+    public function resend(Request $request)
+    {
+        $request->user()->sendEmailVerificationNotification();
+        return back()->with('resent', 'Verification link sent!');
+
+    }
 }

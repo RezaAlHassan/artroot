@@ -23,7 +23,7 @@
       <div class="form-outline mb-4 normal-text">
         <p>Check your email inbox. If the link is not found in your inbox, check your spam/junk folder.</p>
         @if (session('resent'))
-        <div class="info-message" role="alert">
+        <div class="success-message" role="alert">
             A fresh verification link has been sent to your email address.
         </div>
     @endif
@@ -33,7 +33,7 @@
         <p id="login-link" class="normal-text"> <a href="login">Login</a></p>
         <form id="reset-link-form " action="{{ route('verification.resend') }}" method="POST" >
           @csrf
-        <p id="sub-text"> <a onclick="document.getElementById('reset-link-form').submit()">Resend Link</a></p>
+        <button id="sub-text" type="submit" >Resend Link</button>
         </form>
       </div>
   </div>

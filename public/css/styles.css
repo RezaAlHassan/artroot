@@ -68,6 +68,9 @@ a{text-decoration: underline;
     padding-left: 1.8em;
 }
 
+nav {
+  background-color: #fff;
+}
 .nav-item{
     font-family: 'Roboto Mono';
     font-size: 20px;
@@ -145,6 +148,9 @@ a{text-decoration: underline;
     color: #ff7171;
     cursor: pointer;
     text-decoration: underline;
+    padding: 0;
+    border: none;
+    background: none;
   }
   #sub-text:hover{
     text-decoration: none;
@@ -207,7 +213,7 @@ body {
 
 .column-alt-2 {
   column-width: 250px;
-  max-width: 820px;
+  max-width: 400px;
 }
 
 .image-item img {
@@ -274,35 +280,6 @@ body {
     padding: 3px 7px;
     
   }
-  
-  /*.container-alt-2 {
-    padding: 40px 5%;
-  }
-
-  .photo-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .photo-gallery .column-alt-2 {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .photo img {
-    width: 100%;
-    border-radius: 5px;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .photo{
-    position: relative;
-    cursor: pointer;
-  }
-  */
 
   .topleft {
     position: absolute;
@@ -350,6 +327,13 @@ body {
     color: white;
     font-family: "Roboto Mono";
     background-color: rgb(70, 70, 70);
+    padding: 10px;  
+  }
+  
+  .transparent-message{
+    color: rgb(0, 0, 0);
+    font-family: "Roboto Mono";
+    background-color: rgba(70, 70, 70, 0);
     padding: 10px;  
   }
 
@@ -426,3 +410,4 @@ body {
     opacity: .5;
   }
   
+ 

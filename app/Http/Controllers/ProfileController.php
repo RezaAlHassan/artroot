@@ -3,27 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use App\Models\User;
 use App\Models\Art;
+use Session;
+use GuzzleHttp\Client;
+
 
 
 class ProfileController extends Controller
-{
+{   
     public function profile()
     {   
         $user_id = auth()->user()->id; 
         $usertype = auth()->user()->usertype; 
         if(Auth::check() && $usertype == 2){
-            $arts=Art::where('user_id', $user_id)->get();
-            return view('profile')->with('arts', $arts);
+             $arts=Art::where('user_id', $user_id)->get();
+            return view('profile')->with('arts', $arts); 
         }
   
         return redirect("home");
     }
    
     public function addArt()
-    {
+    {   
+        $usertype = auth()->user()->usertype; 
         if(Auth::check() && $usertype == 2){
             return view('add-art');
         }
@@ -60,21 +66,19 @@ class ProfileController extends Controller
  
     }
 
-    /*public function displayImage($filename)
-    {
-        $path = storage_public($filename);
 
-        if (!File::exists($path)) {
-        abort(404);
-        } 
+    public function deleteArt($id)
+    {   
+        
+        $filepath = Art::where('id', $id)->first()->path;
+        if (File::exists(public_path('/art'.$filepath))) {
+            ## Delete file
+            File::delete(public_path('/art'.$filepath));
+        }
+        
+        Art::where('id', $id)->delete(); //delete record
 
-        $file = File::get($path);
-        $type = File::mimeType($path);
-
-        $response = Response::make($file, 200);
-        $response->header("Content-Type", $type);
-
-        return $response;
-}*/
+        return redirect('profile')->with('status', 'The artwork has been deleted');
+    }
 
 }
