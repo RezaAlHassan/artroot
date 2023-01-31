@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('art_name');
             $table->string('art_category');
+            $table->integer('art_price');
             $table->string('path');
             $table->timestamps();
             $table->foreignId('user_id')->constrained();

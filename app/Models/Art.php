@@ -17,6 +17,6 @@ class Art extends Model
     use HasFactory;
 
     protected $fillable = [
-        'art_name', 'art_category', 'path' , 'user_id'
+        'art_name', 'art_category', 'art_price', 'path' , 'user_id'
     ];
 }

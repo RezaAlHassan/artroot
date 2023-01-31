@@ -21,7 +21,7 @@ class ProfileController extends Controller
         $usertype = auth()->user()->usertype; 
         if(Auth::check() && $usertype == 2){
              $arts=Art::where('user_id', $user_id)->get();
-            return view('profile')->with('arts', $arts); 
+            return view('edit-profile')->with('arts', $arts); 
         }
   
         return redirect("home");
@@ -46,6 +46,7 @@ class ProfileController extends Controller
  
         $art_name = $request->input('art_name');
         $art_category = $request->input('art_category');
+        $art_price = $request->input('art_price');
         
         $file = $request->file('art') ;
         $fileName = str_replace(' ', '', $file->getClientOriginalName());
@@ -57,6 +58,7 @@ class ProfileController extends Controller
         $save = new Art;
         $save->art_name = $art_name;
         $save->art_category = $art_category;
+        $save->art_price = $art_price;
         $save->path = $fileName;
         $save->user_id = $user_id;
  
@@ -78,7 +80,7 @@ class ProfileController extends Controller
         
         Art::where('id', $id)->delete(); //delete record
 
-        return redirect('profile')->with('status', 'The artwork has been deleted');
+        return redirect('edit-profile')->with('status', 'The artwork has been deleted');
     }
 
 }

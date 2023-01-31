@@ -83,11 +83,19 @@
               <label class="form-label normal-text">Category</label>
               <select class="form-select form-control normal-text" aria-label="Default select example" name="art_category">
                   <option class="normal-text" selected>All Categories</option>
-                  <option class="normal-text" value="digital">Digital</option>
-                  <option class="normal-text" value="hand_drawn">Hand Drawn</option>
-                  <option class="normal-text" value="product">Product</option>
-                  <option class="normal-text" value="hybrid">Hybrid</option>
+                  <option class="normal-text" value="Digital">Digital</option>
+                  <option class="normal-text" value="Hand-Drawn">Hand Drawn</option>
+                  <option class="normal-text" value="Product">Product</option>
+                  <option class="normal-text" value="Hybrid">Hybrid</option>
                 </select>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label normal-text" for="art_price">Price (in BDT)</label>
+                <input type="number" name="art_price" id="art_price" class="form-control" />
+                @if ($errors->has('art_price'))
+                <span class="error-messager">{{ $errors->first('art_price') }}</span>
+                @endif
               </div>
             
             <div class="form-outline mb-4">
@@ -105,7 +113,7 @@
             <!-- Register buttons -->
           </form>
         </div>
-        <span><a href="/profile" class="gallery-link px-4 normal-text">Back to your gallery</a></span>
+        <span><a href="/edit-profile" class="gallery-link px-4 normal-text">Back to your gallery</a></span>
       </section>  
 
                      

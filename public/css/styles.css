@@ -17,6 +17,7 @@ body{
     transform:translate(-50%, -50%);
 }
 .header{
+    font-family: 'Shadows Into Light';
     font-size: 85px;
     font-weight: bold;
 }
@@ -254,8 +255,12 @@ body {
   color: #fff;
   /* center overlay content */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: right;
+  justify-content: right;
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
 }
 
 /* hover */
@@ -264,22 +269,29 @@ body {
 }
 
   .image-title{
+    color:rgb(0, 0, 0);
+    font-size: 28px;
     font-weight: bolder;
-    font-size: 30px;
-    font-family:'Roboto Mono' ;
-    background-color: rgba(31, 31, 31, 0.9);
+    font-family: 'Pompiere';
     padding: 5px 10px;
+  }
+
+  .image-title-price{
+    color:rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Pompiere';
+    padding: 7px 10px;
     
   }
 
-  .image-title-sub{
+  .image-title-currency{
+    color:rgb(0, 0, 0);
+    font-size: 15px;
     font-weight: bolder;
-    font-size: 20px;
-    font-family:'Roboto Mono' ;
-    background-color: rgba(31, 31, 31, 0.7);
-    padding: 3px 7px;
-    
+    font-family: 'Pompiere';
   }
+
 
   .topleft {
     position: absolute;

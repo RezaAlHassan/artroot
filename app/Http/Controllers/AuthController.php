@@ -45,7 +45,7 @@ class AuthController extends Controller
                 ->withSuccess('Signed in');   
             }
             else{
-                return redirect()->intended('profile')
+                return redirect()->intended('edit-profile')
                 ->withSuccess('Signed in');  
             }
      
