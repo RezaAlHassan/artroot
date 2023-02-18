@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gochi+Hand">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shadows+Into+Light">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pompiere">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,6 +37,7 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  
                   Profile
                 </a>
                 <ul class="dropdown-menu">
@@ -81,7 +82,7 @@
             @if(($art->id)%4==1)      {{--to determine which images will go to which column--}}
             <div class="image-item">
               {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
-              <img src="{{ asset('arts/'.$art->path) }}" alt="" />
+              <img class="img-profile" src="{{ asset('arts/'.$art->path) }}" alt="" />
               <div class="overlay">
                   <div class="d-flex flex-row">
                     
@@ -104,7 +105,6 @@
                 <span class="image-title-price">{{$art->art_price}} <span class="image-title-currency"> BDT</span></span>
                </div>
             </div>
-            <hr class="solid">
               @endif
               @endforeach
             </div> 
@@ -114,7 +114,7 @@
               @if(($art->id)%4==2)      {{--to determine which images will go to which column--}}
               <div class="image-item">
                 {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
-                <img src="{{ asset('arts/'.$art->path) }}" alt="" />
+                <img class="img-profile" src="{{ asset('arts/'.$art->path) }}" alt="" />
                 <div class="overlay">
                     <div class="d-flex flex-row">
                       
@@ -137,7 +137,6 @@
                   <span class="image-title-price">{{$art->art_price}} <span class="image-title-currency"> BDT</span></span>
                  </div>
               </div>
-              <hr class="solid">
                 @endif
                 @endforeach
               </div> 
@@ -147,7 +146,7 @@
                 @if(($art->id)%4==3)      {{--to determine which images will go to which column--}}
                 <div class="image-item">
                   {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
-                  <img src="{{ asset('arts/'.$art->path) }}" alt="" />
+                  <img class="img-profile" src="{{ asset('arts/'.$art->path) }}" alt="" />
                   <div class="overlay">
                       <div class="d-flex flex-row">
                         
@@ -170,17 +169,17 @@
                     <span class="image-title-price">{{$art->art_price}} <span class="image-title-currency"> BDT</span></span>
                    </div>
                 </div>
-                <hr class="solid">
+
                   @endif
                   @endforeach
-                </div> 
+              </div> 
 
                 <div class="column-alt-2">
                   @foreach($arts as $art)
                   @if(($art->id)%4==0)      {{--to determine which images will go to which column--}}
                   <div class="image-item">
                     {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
-                    <img src="{{ asset('arts/'.$art->path) }}" alt="" />
+                    <img class="img-profile" src="{{ asset('arts/'.$art->path) }}" alt="" />
                     <div class="overlay">
                         <div class="d-flex flex-row">
                           
@@ -203,10 +202,10 @@
                       <span class="image-title-price">{{$art->art_price}} <span class="image-title-currency"> BDT</span></span>
                      </div>
                   </div>
-                  <hr class="solid">
                     @endif
                     @endforeach
-                  </div> 
+                </div> 
+
 
         </div>
         @if(count($arts)==0)
