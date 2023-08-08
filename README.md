@@ -28,7 +28,7 @@ The platforms implements a very rigorous authentication. Features are listed bel
 
 ## To test locally:
 1. Unzip the downloaded archive
-2. Copy and paste **aqm** folder in your htdocs folder
+2. Copy and paste unzipped folder in your htdocs folder
 3. In your terminal run `composer install`
 4. Update your `.env` configurations accordingly (mainly the database configuration)
 5. In your terminal run `php artisan key:generate`
