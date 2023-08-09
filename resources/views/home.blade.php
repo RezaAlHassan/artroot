@@ -41,7 +41,7 @@
                   Profile
                 </a>
                 <ul class="dropdown-menu">
-                  @if(auth()->user()->usertype==2)<li><a class="dropdown-item" href="/profile">My Gallery</a></li> @endif
+                  @if(auth()->user()->usertype==2)<li><a class="dropdown-item" href="/edit-profile">My Gallery</a></li> @endif
                   <li><a class="dropdown-item" href="#">Account</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a href="{{ route('logout') }}" class="dropdown-item" >Sign Out</a></li>
