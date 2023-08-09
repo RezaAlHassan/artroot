@@ -36,8 +36,7 @@
                 <a class="nav-link mx-4" href="#">Browse</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  
+                <a class="nav-link dropdown-toggle" href="/edit-profile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Profile
                 </a>
                 <ul class="dropdown-menu">
@@ -227,7 +226,7 @@
   // 👇️ removes element from DOM
   box.style.display = 'none';
 
-}, 2500); // 👈️ time in milliseconds
+}, 4500); // 👈️ time in milliseconds
   </script>
 
 </html>
