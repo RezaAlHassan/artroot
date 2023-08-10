@@ -19,6 +19,7 @@ A modern, simple and attractive user friendly ui has been used along with good i
 - A user is properly informed of his actions using information messages that stand out and clever redirection techniques
 
 ## Login + Registration + Email Verification
+![ss1](https://github.com/RezaAlHassan/artroot-laravel/assets/24864973/3b1cc7b6-42bd-48a2-aff3-5e58bffd5169)
 The platforms implements a very rigorous authentication. Features are listed below:
 - To access any part of the platform, all users must verify their email addresses first if they are a new user. 
 - Depending on the user type selected during registration, the user will be redirected to their their respective windows.
