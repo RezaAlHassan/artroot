@@ -20,7 +20,7 @@ A modern, simple and attractive user friendly ui has been used along with good i
 
 
 ## Login + Registration + Email Verification
- <img width="400" src="https://github.com/RezaAlHassan/artroot-laravel/assets/24864973/dc2fe2c2-bd9c-4f72-b2ef-14e1c7011ed7">
+ <img width="100%" src="https://github.com/RezaAlHassan/artroot-laravel/assets/24864973/dc2fe2c2-bd9c-4f72-b2ef-14e1c7011ed7">
 
 The platforms implements a very rigorous authentication. Features are listed below:
 - To access any part of the platform, all users must verify their email addresses first if they are a new user. 
