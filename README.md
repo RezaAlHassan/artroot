@@ -9,7 +9,6 @@
 - #### Artist
 ![](https://github.com/RezaAlHassan/artroot-laravel/assets/24864973/4ba48a4c-562d-47fb-80cb-34505482277c)
 
-
     - They can CRUD artwork
     - They can browse through artworks
     - They can setup credit accounts to receive payment
@@ -24,6 +23,7 @@ A modern, simple and attractive user friendly ui has been used along with good i
 
 ## Login + Registration + Email Verification
  <img width="100%" src="https://github.com/RezaAlHassan/artroot-laravel/assets/24864973/dc2fe2c2-bd9c-4f72-b2ef-14e1c7011ed7">
+ <br>
 
 The platforms implements a very rigorous authentication. Features are listed below:
 - To access any part of the platform, all users must verify their email addresses first if they are a new user. 
