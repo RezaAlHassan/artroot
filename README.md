@@ -1,4 +1,4 @@
-![gallery](https://github.com/RezaAlHassan/artroot-laravel/assets/24864973/8f08d775-4f86-4904-991a-96ade6123db8)# Artroot : A Platform for Artists (Laravel 9)
+# Artroot : A Platform for Artists (Laravel 9)
 ### *A fully customised platform for artists where they can showcase their art and attract potential buyers, with account support for both artists, customers and enthusiasts.*
 ### User Types :
 - #### Enthusiast/Customer
