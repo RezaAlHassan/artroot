@@ -18,8 +18,9 @@ A modern, simple and attractive user friendly ui has been used along with good i
 - All possible errors are shown, attratively, that can happen during form validation both during registartion and login
 - A user is properly informed of his actions using information messages that stand out and clever redirection techniques
 
+
 ## Login + Registration + Email Verification
- <img width="400" src="https://www.figma.com/file/laB9COroPGJ0ZE61b2y6r1/Scraps-1?type=design&node-id=305%3A48&mode=design&t=DM9MR1cogtTJDtvh-1">
+ <img width="400" src="https://github.com/RezaAlHassan/artroot-laravel/assets/24864973/dc2fe2c2-bd9c-4f72-b2ef-14e1c7011ed7">
 
 The platforms implements a very rigorous authentication. Features are listed below:
 - To access any part of the platform, all users must verify their email addresses first if they are a new user. 
