@@ -1,9 +1,21 @@
 
+*{
+  box-sizing: border-box;
+}
 
 body{
     background-image: url("../images/annie-spratt-zA7I5BtFbvw-unsplash.jpg");
     font-family: 'Roboto Mono';
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
 }
+
+.card{
+border: #000000 1px solid;
+}
+
 #form-border{
     border: solid;
     border-width: 10px;

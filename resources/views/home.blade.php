@@ -134,31 +134,62 @@
           </div>
         </div>
       </div>
+<br><br><br>
+
+<div class="featured-header-bg">
+  <p class="featured-header text-center my-3">Artwork</p>
+  </div>
+
+<div class="p-5 mx-auto align-items-start row row-cols-4 row-cols-sm-6 row-cols-md-9 g-3"  >
+        @foreach ($arts as $art)
+        <div class='card col p-4' style="margin-left:50px;">
+        <div class="image-item">
+          {{--<img src="{{ route('art.display', $art->path) }}" alt="" />--}}
+          <img class="img-profile" src="{{ asset('arts/'.$art->path) }}" alt="" />
+          <div class="overlay">
+              <div class="d-flex flex-row">
+               
+
+            </div>
+          </div>    
+          </div>
+          <br>
+          <div id="art-details" class="d-flex justify-content-between py-2">
+            <span class="image-title">{{$art->art_name}} </span>
+            <span class="image-title-price">{{$art->art_price}} <span class="image-title-currency"> BDT</span></span>
+            <a href='#' class="image-title">{{$art->user->name}} </a>
+           </div>
+          </div>
+        
+          @endforeach
+          
+          </section>
+        </div>
       
       
 
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+        </body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+          <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length} ;
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          x[slideIndex-1].style.display = "block";
+        }
 
-  </script>
+          </script>
 
-</html>
+        </html>
